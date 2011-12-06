@@ -1,6 +1,6 @@
 <?php
 	$files = htmlspecialchars_decode(file_get_contents('http://www.ohnorobot.com/index.pl?'.$_SERVER['QUERY_STRING']), ENT_QUOTES);
-	$files = split("<li>", $files);
+	$files = explode("<li>", $files);
 	unset($files[0]);
 	foreach($files as $file){
 		echo json_encode(array(/* 'id'   => substr($file, (strpos($file, "comic=")+6), strpos($file, '">') - (strpos($file,  "comic=")+6)),*/
